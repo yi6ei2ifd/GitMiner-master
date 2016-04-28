@@ -29,7 +29,6 @@ class GitMiner(object):
 ╚██████╔╝██║   ██║   ██║ ╚═╝ ██║██║██║ ╚████║███████╗██║  ██║
  ╚═════╝ ╚═╝   ╚═╝   ╚═╝     ╚═╝╚═╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝ v1.1
  Automatic search for GitHub.                                                            
-
  """+frescurinha.ENDC+frescurinha.FAIL+"""+ Autor:"""+frescurinha.ENDC+""" Danilo Vaz a.k.a. UNK
  """+frescurinha.FAIL+"""+ Blog:"""+frescurinha.ENDC+""" http://unk-br.blogspot.com
  """+frescurinha.FAIL+"""+ Github:"""+frescurinha.ENDC+""" http://github.com/danilovazb
@@ -176,8 +175,9 @@ class GitMiner(object):
             self.saveOutput("| [USER]: %s\n" % usuario[number_link])
             print("| [" + frescurinha.OKBLUE + "LINK" + frescurinha.ENDC + "]: %s" % link)
             self.saveOutput("| [LINK]: %s\n" % link)
-            print("| [" + frescurinha.OKBLUE + "LAST INDEXED" + frescurinha.ENDC + "]: %s" % last_indexed[number_link])
-            self.saveOutput("| [LAST INDEXED]: %s\n" % last_indexed[number_link])
+            if(len(last_indexed)):
+                print("| [" + frescurinha.OKBLUE + "LAST INDEXED" + frescurinha.ENDC + "]: %s" % last_indexed[number_link])
+                self.saveOutput("| [LAST INDEXED]: %s\n" % last_indexed[number_link])
             self.parseCode(code_boladao)
             if "s" in self.ignora_modulo:
                 print(frescurinha.HELP + "+----------------------------------------------------+"+ frescurinha.ENDC)
